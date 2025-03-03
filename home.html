@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home-page</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b8232b1b35.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="home-page">
+        <div class="main-body">
+            <div class="left-part">
+                <p class="first-line">Trade-in-offer</p>
+                <p class="second-line">Super value deals</p>
+                <p class="third-line">On all Products</p>
+                <p class="fourth-line">Save more with coupons & upto 70% off!</p>
+                <button class="fifth-line">Shop Now</button>
+            </div>
+            <div class="right-part">
+                <img src="images/hero.png">
+            </div>
+        </div>
+        <div class="home-second-page">
+            <div class="options">
+                <div class="box"><img src="images/features/f1.png"><p>Free Shipping</p></div>
+                <div class="box"><img src="images/features/f2.png"><p>Online Order</p></div>
+                <div class="box"><img src="images/features/f3.png"><p>Save Money</p></div>
+                <div class="box"><img src="images/features/f4.png"><p>Promotions</p></div>
+                <div class="box"><img src="images/features/f5.png"><p>Happy Sell</p></div>
+                <div class="box"><img src="images/features/f6.png"><p>F24/7 Support</p></div>
+            </div>
+            <p class="featured-Products-line">Featured Products</p>
+            <p class="Summer-collection-line">Summer Collection New Modern Design</p>
+            <div class="featured-products">
+                <div class="box">
+                    <a href="#" onclick="loadPage('product.html'); return false;"><img src="images/products/f1.jpg"></a>
+                    <div class="discription">
+                    <div class="brand-name">adidas</div>
+                    <div class="t-shirt-name">Cartoon Astronaut T-shirts</div>
+                    <div class="rating-price-cart-button">
+                        <div class="rating-price">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <div class="price">$78</div>
+                        </div>
+                    <button><i class="fa-solid fa-cart-shopping cart-icon"></i></button>
+                    </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <a href="#" onclick="loadPage('product.html'); return false;"><img src="images/products/f2.jpg"></a>
+                    <div class="discription">
+                    <div class="brand-name">adidas</div>
+                    <div class="t-shirt-name">Cartoon Astronaut T-shirts</div>
+                    <div class="rating-price-cart-button">
+                        <div class="rating-price">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <div class="price">$78</div>
+                        </div>
+                    <button><i class="fa-solid fa-cart-shopping cart-icon"></i></button>
+                    </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <a href="#" onclick="loadPage('product.html'); return false;"><img src="images/products/f3.jpg"></a>
+                    <div class="discription">
+                    <div class="brand-name">adidas</div>
+                    <div class="t-shirt-name">Cartoon Astronaut T-shirts</div>
+                    <div class="rating-price-cart-button">
+                        <div class="rating-price">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <div class="price">$78</div>
+                        </div>
+                    <button><i class="fa-solid fa-cart-shopping cart-icon"></i></button>
+                    </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <a href="#" onclick="loadPage('product.html'); return false;"><img src="images/products/f4.jpg"></a>
+                    <div class="discription">
+                    <div class="brand-name">adidas</div>
+                    <div class="t-shirt-name">Cartoon Astronaut T-shirts</div>
+                    <div class="rating-price-cart-button">
+                        <div class="rating-price">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <div class="price">$78</div>
+                        </div>
+                    <button><i class="fa-solid fa-cart-shopping cart-icon"></i></button>
+                    </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <a href="#" onclick="loadPage('product.html'); return false;"><img src="images/products/f5.jpg"></a>
+                    <div class="discription">
+                    <div class="brand-name">adidas</div>
+                    <div class="t-shirt-name">Cartoon Astronaut T-shirts</div>
+                    <div class="rating-price-cart-button">
+                        <div class="rating-price">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <div class="price">$78</div>
+                        </div>
+                    <button><i class="fa-solid fa-cart-shopping cart-icon"></i></button>
+                    </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <a href="#" onclick="loadPage('product.html'); return false;"><img src="images/products/f6.jpg"></a>
+                    <div class="discription">
+                    <div class="brand-name">adidas</div>
+                    <div class="t-shirt-name">Cartoon Astronaut T-shirts</div>
+                    <div class="rating-price-cart-button">
+                        <div class="rating-price">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <div class="price">$78</div>
+                        </div>
+                    <button><i class="fa-solid fa-cart-shopping cart-icon"></i></button>
+                    </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <a href="#" onclick="loadPage('product.html'); return false;"><img src="images/products/f7.jpg"></a>
+                    <div class="discription">
+                    <div class="brand-name">adidas</div>
+                    <div class="t-shirt-name">Cartoon Astronaut T-shirts</div>
+                    <div class="rating-price-cart-button">
+                        <div class="rating-price">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <div class="price">$78</div>
+                        </div>
+                    <button><i class="fa-solid fa-cart-shopping cart-icon"></i></button>
+                    </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <a href="#" onclick="loadPage('product.html'); return false;"><img src="images/products/f8.jpg"></a>
+                    <div class="discription">
+                    <div class="brand-name">adidas</div>
+                    <div class="t-shirt-name">Cartoon Astronaut T-shirts</div>
+                    <div class="rating-price-cart-button">
+                        <div class="rating-price">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <div class="price">$78</div>
+                        </div>
+                    <button><i class="fa-solid fa-cart-shopping cart-icon"></i></button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="explore-more-section">
+            <div class="first-line">Repair Services</div>
+            <div class="second-line">Up to 70% off - All t-Shirts & Accessories</div> 
+            <button>Explore More</button>
+            </div>
+            <p class="New-arrivals-line">New Arrivals</p>
+            <p class="Summer-collection-new-arrivals-line">Summer Collection New Modern Design</p>
+            <div class="New-Arrivals">
+                <div class="box">
+                    <img src="images/products/n1.jpg">
+                    <div class="discription">
+                    <div class="brand-name">adidas</div>
+                    <div class="t-shirt-name">Cartoon Astronaut T-shirts</div>
+                    <div class="rating-price-cart-button">
+                        <div class="rating-price">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <div class="price">$78</div>
+                        </div>
+                    <button><i class="fa-solid fa-cart-shopping cart-icon"></i></button>
+                    </div>
+                    </div>
+                </div>
+                <div class="box"><img src="images/products/n2.jpg">
+                    <div class="discription">
+                        <div class="brand-name">adidas</div>
+                        <div class="t-shirt-name">Cartoon Astronaut T-shirts</div>
+                        <div class="rating-price-cart-button">
+                            <div class="rating-price">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                <div class="price">$78</div>
+                            </div>
+                        <button><i class="fa-solid fa-cart-shopping cart-icon"></i></button>
+                        </div>
+                        </div></div>
+                <div class="box"><img src="images/products/n3.jpg">
+                    <div class="discription">
+                        <div class="brand-name">adidas</div>
+                        <div class="t-shirt-name">Cartoon Astronaut T-shirts</div>
+                        <div class="rating-price-cart-button">
+                            <div class="rating-price">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                <div class="price">$78</div>
+                            </div>
+                        <button><i class="fa-solid fa-cart-shopping cart-icon"></i></button>
+                        </div>
+                        </div></div>
+                <div class="box"><img src="images/products/n4.jpg">
+                    <div class="discription">
+                        <div class="brand-name">adidas</div>
+                        <div class="t-shirt-name">Cartoon Astronaut T-shirts</div>
+                        <div class="rating-price-cart-button">
+                            <div class="rating-price">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                <div class="price">$78</div>
+                            </div>
+                        <button><i class="fa-solid fa-cart-shopping cart-icon"></i></button>
+                        </div>
+                        </div>
+                    </div>
+                <div class="box"><img src="images/products/n5.jpg">
+                        <div class="discription">
+                        <div class="brand-name">adidas</div>
+                        <div class="t-shirt-name">Cartoon Astronaut T-shirts</div>
+                        <div class="rating-price-cart-button">
+                            <div class="rating-price">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                <div class="price">$78</div>
+                            </div>
+                        <button><i class="fa-solid fa-cart-shopping cart-icon"></i></button>
+                        </div>
+                        </div>
+                    </div>
+                <div class="box"><img src="images/products/n6.jpg">
+                        <div class="discription">
+                            <div class="brand-name">adidas</div>
+                            <div class="t-shirt-name">Cartoon Astronaut T-shirts</div>
+                            <div class="rating-price-cart-button">
+                                <div class="rating-price">
+                                    <div class="rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </div>
+                                    <div class="price">$78</div>
+                                </div>
+                            <button><i class="fa-solid fa-cart-shopping cart-icon"></i></button>
+                            </div>
+                            </div></div>
+                <div class="box"><img src="images/products/n7.jpg">
+                        <div class="discription">
+                            <div class="brand-name">adidas</div>
+                            <div class="t-shirt-name">Cartoon Astronaut T-shirts</div>
+                            <div class="rating-price-cart-button">
+                                <div class="rating-price">
+                                    <div class="rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </div>
+                                    <div class="price">$78</div>
+                                </div>
+                            <button><i class="fa-solid fa-cart-shopping cart-icon"></i></button>
+                            </div>
+                            </div></div>
+                <div class="box"><img src="images/products/n8.jpg">
+                        <div class="discription">
+                            <div class="brand-name">adidas</div>
+                            <div class="t-shirt-name">Cartoon Astronaut T-shirts</div>
+                            <div class="rating-price-cart-button">
+                                <div class="rating-price">
+                                    <div class="rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </div>
+                                    <div class="price">$78</div>
+                                </div>
+                            <button><i class="fa-solid fa-cart-shopping cart-icon"></i></button>
+                            </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+        <div class="home-third-page">
+            <div class="banner-section">
+                <div class="banner-box box1">
+                    <p>crazy deals</p>
+                    <p>buy 1 get 1 free</p>
+                    <p>The best classic dress is on scale at cora</p>
+                    <button>Learn More</button>
+                </div>
+                <div class="banner-box box2">
+                    <p>spring/summer</p>
+                    <p>upcoming season</p>
+                    <p>The best Classic deess is on sale</p>
+                    <button>Collection</button>
+                </div>
+                <div class="banner-box box3">
+                    <p>SEASON SALE</p>
+                    <p>Winter Collection-50% off</p>
+                </div>
+                <div class="banner-box box4">
+                    <p>NEW FOOTWEAR COLLECTION</p>
+                    <p>Spring/Summer 2022</p>
+                </div>
+                <div class="banner-box box5">
+                    <p>T-Shirts</p>
+                    <p>New Trendy Prints</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

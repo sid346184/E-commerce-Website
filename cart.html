@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <script src="https://kit.fontawesome.com/b8232b1b35.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Warang+Citi&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b8232b1b35.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="cart-page">
+        <div class="header">
+            <p class="cart-page-first-line">#cart</p>
+            <p class="cart-page-second-line">Add your coupon & SAVE upto 70%!</p>
+
+        </div>
+        <button>
+            <div class="fa-cart-shopping">dd</div>
+        </button>
+        
+        <table class="cart-items">
+        <tr>
+            <th>REMOVE</th>
+            <th>IMAGE</th>
+            <th>PRODUCT</th>
+            <th>PRICE</th>
+            <th>QUANTITY</th>
+            <th>SUBTOTAL</th>
+        </tr>
+        </table>
+  
+    <div class="coupon-cart-total">
+        <div class="coupon">
+            <h2>Apply Coupon</h2>
+            <input type="text" placeholder="Enter your coupon" id="coupon">
+            <button>Apply</button>
+        </div>
+        <div class="cart-total">
+            <table>
+             <th>Cart Total</th>
+             <tr>
+                <td>Cart Subtotal</td>
+                <td>$354.57</td>
+             </tr>
+             <tr>
+                <td>Shipping</td>
+                <td>Free</td>
+             </tr>
+             <tr>
+                <td>Total</td>
+                <td>$354.57</td>
+             </tr>
+             <tr class="checkout-btn">
+                <td><button>Proceed to checkout</button></td>
+             </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
