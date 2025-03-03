@@ -594,9 +594,9 @@ margin:40px 30vw;
     padding: 25px 80px;
 }
 .contact-page .location-details #map{
-        width: 50vw;
-        height:40vh;
-        border: 2px solid black;
+    width: 100%;
+    height: 500px;
+    border: 2px solid black;
 }
 .contact-page .contact-us{
     height:100vh;

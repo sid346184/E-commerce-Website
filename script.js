@@ -35,63 +35,125 @@ function loadPage(page) {
         })
         .catch(error => console.log("Error loading page:", error));
 }
+
+function loadMap() {
+    var map = L.map('map').setView([28.609619, 77.344601], 13);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker([28.609619, 77.344601]).addTo(map)
+        .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+        .openPopup();
+}
+
 /*--------------------------------Google Maps---------------------------------*/
 
 
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     var map = L.map('map').setView([28.609619, 77.344601], 13);
-
-//     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-//     }).addTo(map);
-//     console.log("hi")
-
-//     L.marker([28.609619, 77.344601]).addTo(map)
-//         .bindPopup('A pretty CSS popup.<br> Easily customizable.')
-//         .openPopup();
-// });
-
   /*---------------------Add-items to Cart--------------------------------*/
-var cartButtons = document.querySelectorAll('.fa-cart-shopping');
-var cartTable = document.querySelector('.cart-items tbody');
-let noOfClicks = 0;
+let cart = [];
 
+function loadCartFunctionality() {
+    // Initialize cart from localStorage
+    cart = JSON.parse(localStorage.getItem('cart')) || [];
+    updateCartDisplay();
 
+    // Add event listeners for remove buttons
+    document.querySelectorAll('.cart-items .fa-xmark').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const row = this.closest('tr');
+            const index = Array.from(row.parentNode.children).indexOf(row) - 1;
+            removeFromCart(index);
+        });
+    });
+}
 
-cartButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        noOfClicks++;
-        let newRow = document.createElement('tr');
-        console.log("cart button is clicked");
+function addToCart(product) {
+    cart.push({
+        image: product.image || "images/products/f1.jpg",
+        name: product.name || "Cartoon Astronaut T-shirts",
+        price: product.price || 118.19,
+        quantity: 1
+    });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartDisplay();
+}
 
-        if (noOfClicks === 1) {
-            cartTable.innerHTML = `
-                <tr>
-                    <th>REMOVE</th>
-                    <th>IMAGE</th>
-                    <th>PRODUCT</th>
-                    <th>PRICE</th>
-                    <th>QUANTITY</th>
-                    <th>SUBTOTAL</th>
-                </tr>
-            `;
-        }
-        newRow.innerHTML = `
-            <td><i class="fa-solid fa-xmark"></i></td>
-            <td><img src="images/products/f1.jpg" alt="Cartoon Astronaut T-shirt"></td>
-            <td>Cartoon Astronaut T-shirts</td>
-            <td>$118.19</td>
-            <td>
-                <select name="Quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-            </td>
-            <td>$118.19</td>
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartDisplay();
+}
+
+function updateCartDisplay() {
+    const cartTable = document.querySelector('.cart-items');
+    if (!cartTable) return;
+
+    let html = `
+        <tr>
+            <th>REMOVE</th>
+            <th>IMAGE</th>
+            <th>PRODUCT</th>
+            <th>PRICE</th>
+            <th>QUANTITY</th>
+            <th>SUBTOTAL</th>
+        </tr>
+    `;
+
+    let total = 0;
+    cart.forEach((item, index) => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        html += `
+            <tr>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><img src="${item.image}" alt="${item.name}"></td>
+                <td>${item.name}</td>
+                <td>$${item.price.toFixed(2)}</td>
+                <td>
+                    <select name="Quantity" onchange="updateQuantity(${index}, this.value)">
+                        ${[1,2,3,4,5].map(num => 
+                            `<option value="${num}" ${item.quantity === num ? 'selected' : ''}>${num}</option>`
+                        ).join('')}
+                    </select>
+                </td>
+                <td>$${subtotal.toFixed(2)}</td>
+            </tr>
         `;
+    });
 
-        cartTable.appendChild(newRow);
+    cartTable.innerHTML = html;
+    updateCartTotal(total);
+}
+
+function updateQuantity(index, quantity) {
+    cart[index].quantity = parseInt(quantity);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartDisplay();
+}
+
+function updateCartTotal(total) {
+    const subtotalElem = document.querySelector('.cart-total td:nth-child(2)');
+    const totalElem = document.querySelector('.cart-total tr:last-child td:last-child');
+    if (subtotalElem && totalElem) {
+        subtotalElem.textContent = `$${total.toFixed(2)}`;
+        totalElem.textContent = `$${total.toFixed(2)}`;
+    }
+}
+
+// Update the existing cart button click handlers
+document.querySelectorAll('.fa-cart-shopping').forEach(button => {
+    button.addEventListener('click', () => {
+        const productCard = button.closest('.box');
+        if (productCard) {
+            const product = {
+                image: productCard.querySelector('img').src,
+                name: productCard.querySelector('.product-name').textContent,
+                price: parseFloat(productCard.querySelector('.price').textContent.replace('$', '')),
+            };
+            addToCart(product);
+        }
     });
 });
